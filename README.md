@@ -18,3 +18,5 @@ Import this repository in Vercel and keep the defaults:
 - Output directory: `dist`
 
 The included `vercel.json` pins those settings for clean deployments.
+
+Vercel rebuilds the game component from the packed source parts before compiling.
