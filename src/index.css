@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 28% 16%, rgba(255, 197, 109, 0.14), transparent 30rem),
+    linear-gradient(135deg, #211510 0%, #13201d 58%, #120f18 100%);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  user-select: none;
+  touch-action: none;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+canvas {
+  image-rendering: auto;
+}
+
+@layer components {
+  .ios-glass {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08)),
+      rgba(32, 22, 18, 0.58);
+    box-shadow:
+      0 18px 46px rgba(0, 0, 0, 0.32),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(18px) saturate(1.2);
+  }
+
+  .ios-cream {
+    border: 1px solid rgba(122, 74, 34, 0.32);
+    background:
+      linear-gradient(180deg, rgba(255, 249, 227, 0.96), rgba(242, 218, 179, 0.92)),
+      #f4e5c8;
+    color: #3a2414;
+    box-shadow:
+      0 12px 30px rgba(20, 10, 4, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    border-radius: 12px;
+  }
+
+  .ios-sheet {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background:
+      linear-gradient(180deg, rgba(42, 29, 20, 0.96), rgba(19, 24, 28, 0.98)),
+      #1c1512;
+    box-shadow:
+      0 -26px 64px rgba(0, 0, 0, 0.48),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(22px) saturate(1.2);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .bg-background {
+    background-color: transparent;
+  }
+
+  .text-foreground {
+    color: #fff7e5;
+  }
+
+  .text-muted {
+    color: rgba(255, 247, 229, 0.68);
+  }
+
+  .text-gold {
+    color: #ffd166;
+  }
+
+  .text-cyan {
+    color: #69dcff;
+  }
+
+  .text-green {
+    color: #7ad188;
+  }
+
+  .text-red {
+    color: #ff8b9b;
+  }
+
+  .bg-gold {
+    background-color: #ffd166;
+  }
+
+  .bg-green {
+    background-color: #7ad188;
+  }
+
+  .bg-red {
+    background-color: #e85a55;
+  }
+
+  .fade-in {
+    animation: fade-in 160ms ease-out both;
+  }
+
+  .pop-in {
+    animation: pop-in 180ms cubic-bezier(0.2, 0.9, 0.2, 1.2) both;
+  }
+
+  .sheet-in {
+    animation: sheet-in 220ms cubic-bezier(0.2, 0.85, 0.2, 1) both;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(4px);
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateY(28px);
+  }
+}
